@@ -25,8 +25,40 @@ else if (num<3 && num<=6) {
 }
 }
 }
+
+
+static void drawPointyRoof(int size){
+	roby.move(size);
+	roby.turn(45);
+	roby.move(20);
+	roby.turn(90);
+	roby.move(20);
+	roby.turn(45);
+	roby.move(size);
+	roby.turn(270);
+	roby.move(20);
+	roby.turn(270);
+}
+static void drawFlatRoof(int size) {
+	roby.move(size);
+	roby.turn(90);
+	roby.move(20);
+	roby.turn(90);
+	roby.move(size);
+	roby.turn(270);
+	roby.move(20);
+	roby.turn(270);
+	
+}
+
 static void drawHouse(String Height, String Color) {
 	int size=0;
+	if (Height.contentEquals("large")) {
+		size=250 ;
+		roby.setPenColor(java.awt.Color.BLUE);
+		drawFlatRoof(size);
+	}
+	else {
 	if (Height.contentEquals("small")) {
 		size=60;
 		roby.setPenColor(java.awt.Color.RED);
@@ -35,18 +67,15 @@ static void drawHouse(String Height, String Color) {
 		size=120;
 		roby.setPenColor(java.awt.Color.GREEN);
 	}	
-	if (Height.contentEquals("large")) {
-		size=250;
-		roby.setPenColor(java.awt.Color.BLUE);
+
+	
+	Random randy= new Random();
+int roof=randy.nextInt(2);
+	if(roof==0) {
+		drawFlatRoof(size);
 	}
-	roby.move(size);
-	roby.turn(90);
-	roby.move(20);
-	roby.turn(90);
-	roby.move(size);
-	roby.turn(270);
-	roby.move(20);
-	roby.turn(270);
-}
-}
+	if(roof==1) {
+		drawPointyRoof(size);
+	}
+	}}}
 
