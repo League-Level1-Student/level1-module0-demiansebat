@@ -47,22 +47,28 @@ else{
 	JOptionPane.showMessageDialog(null, "INCORRECT");
 }
 		// 8. print "INCORRECT" if the answer is wrong
-
+quizWindow.remove(comp);
 		// 9. remove the component from the quiz window (you may not see the
 		// effect of this until step 12)
-
+String code="https://i2.wp.com/www.doseofleadership.com/wp-content/uploads/2017/09/dragons.jpg";
 		// 10. find another image and create it (might take more than one line
 		// of code)
 
 		// 11. add the second image to the quiz window
-
+comp=createImage(code);
+quizWindow.add(comp);
 		// 12. pack the quiz window
-
+quizWindow.pack();
 		// 13. ask another question
-
+String say=JOptionPane.showInputDialog("What Kind of animal is this?");
 		// 14+ check answer, say if correct or incorrect, etc.
+if(say.equals("dragon")) {
+	JOptionPane.showMessageDialog(null, "CORRECT");}
+else {
+	JOptionPane.showMessageDialog(null, "INCORRECT");
+}
+}
 
-	}
 
 	private Component createImage(String imageUrl) throws MalformedURLException {
 		URL url = new URL(imageUrl);
