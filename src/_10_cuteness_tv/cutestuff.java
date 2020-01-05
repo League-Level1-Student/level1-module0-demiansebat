@@ -14,21 +14,18 @@ public class cutestuff implements ActionListener {
 	JButton button=new JButton();
 	JButton cute=new JButton();
 	JButton stuff=new JButton();
-public static void main(String[] args) {
-	
-}
 void run() {
 	JFrame frame=new JFrame();
 	JPanel panel=new JPanel();
 	frame.add(panel);
-	frame.isVisible();
+	frame.setVisible(true);
 	panel.add(button);
 	panel.add(cute);
 	panel.add(stuff);
 	button.addActionListener(this);
 	cute.addActionListener(this);
 	stuff.addActionListener(this);
-	panel.
+	frame.setSize(500, 250);
 }
 void showDucks() {
      playVideo("https://www.youtube.com/watch?v=MtN1YnoL46Q");
